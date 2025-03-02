@@ -1,5 +1,13 @@
-import { CoursePage } from "@/components/course-page"
+import { CoursePage } from "@/components/course-page";
+
+export async function generateStaticParams() {
+  return []; // Retorna vazio para permitir fallback
+}
 
 export default function Page({ params }: { params: { id: string } }) {
-  return <CoursePage id={params.id} />
+  if (!params.id) {
+    return <p>Página não encontrada</p>; // Ou redirecione para erro
+  }
+
+  return <CoursePage id={params.id} />;
 }
