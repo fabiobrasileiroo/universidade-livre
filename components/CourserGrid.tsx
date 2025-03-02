@@ -121,7 +121,7 @@ export function CourseGrid() {
           return n
         })
       )
-    }, [])
+    }, [setNodes])
   
     useEffect(() => {
       const loadSavedStatuses = () => {
@@ -142,7 +142,7 @@ export function CourseGrid() {
       }
   
       loadSavedStatuses()
-    }, []) 
+    }, [setNodes]) 
   
     const nodesWithStatusChange = nodes.map((node) => ({
       ...node,

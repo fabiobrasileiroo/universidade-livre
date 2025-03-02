@@ -24,7 +24,7 @@ function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T) => voi
         setStoredValue(initialValue);
       }
     }
-  }, []);
+  }, [initialValue, key]);
 
   const setValue = (value: T) => {
     try {
